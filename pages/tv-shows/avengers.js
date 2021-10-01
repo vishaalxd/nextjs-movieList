@@ -14,7 +14,7 @@ function MovieList({ list }) {
     <section className={Styles.body}>
        <Head>
         <title>Catalogue</title>
-        <meta name="viewport" content="Avengers, Marvel, Movies" />
+        <meta name="robots" content="Avengers, Marvel, Movies" />
       </Head>
       <div className={Styles.flex}>
         {list &&

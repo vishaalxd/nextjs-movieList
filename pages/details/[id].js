@@ -2,6 +2,10 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import detailsStyle from "./details.module.css";
 
+function createMarkup(summary) {
+  return {__html: summary};
+}
+
 const detailPage = ({ details }) => {
   const router = useRouter();
   const { id } = router.query;
@@ -24,7 +28,7 @@ const detailPage = ({ details }) => {
     <div>
        <Head>
         <title>Catalogue</title>
-        <meta name="viewport" content={`${name},${language},${network?.country?.name}`} />
+        <meta name="description" content={`${name},${language},${network?.country?.name}`} />
       </Head>
       <h1>{name}</h1>
       <div className={detailsStyle.flexCompose}>
@@ -32,7 +36,7 @@ const detailPage = ({ details }) => {
           <img src={image?.original} />
         </div>
         <div className={detailsStyle.container}>
-          <h3>{summary}</h3>
+          <h3 dangerouslySetInnerHTML={createMarkup(summary)}></h3>
           <br />
           <div className={detailsStyle.blockDetails}>
             <div>
@@ -105,7 +109,7 @@ export async function getServerSideProps(context) {
       details: data,
     },
   };
-  
+
 }else {
   throw new AppError();
 }
