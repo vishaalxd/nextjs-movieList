@@ -53,7 +53,7 @@ function MovieList({ list }) {
                     Runtime:{" "}
                     <span className={Styles.dark}>{each.show?.runtime}</span>
                   </div>
-                  <div>Average: {each.ratings?.average}</div>
+                  <div>Ratings: {each.show?.rating?.average}</div>
                   {each.show?.premiered && (
                     <>
                       <i>
@@ -67,7 +67,7 @@ function MovieList({ list }) {
                       </i>
                     </>
                   )}
-                  <div>Countries: {each.show?.dvdCountry}</div>
+                  <div>Countries: {each.show?.network?.country?.name}</div>
                 </div>
               </div>
             </div>
