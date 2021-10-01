@@ -1,0 +1,41 @@
+.body {
+    background:#000;
+    color:#fff;
+}
+.flex{
+    display:flex;
+    justify-content:flex-start;
+    align-items: flex-start
+    ;
+    flex-wrap: wrap;
+    flex:1;
+}
+
+.flex > * {
+    padding: 15px;
+}
+
+.maxWidth{
+    max-width: 205px;
+}
+
+.setOffset{
+    min-height:295px;
+}
+
+.greyFormat{
+    color:wheat;
+}
+
+.dark{
+    color:#fff;
+}
+
+.imageStyle{
+    cursor: pointer;
+}
+
+.imageStyle:hover{
+    transform: translateY(-3px);
+    transition: 0.4s;
+}
